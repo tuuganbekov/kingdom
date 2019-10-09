@@ -1,4 +1,7 @@
-function sendEmail() {
+document.getElementById("contact-form").addEventListener("submit", sendEmail(event))
+
+function sendEmail(event) {
+    event.preventDefault()
     Email.send({
         SecureToken : "52ce27ab-20df-4a87-a372-e6eb04b6a850",
         To : 'kingdomdev.io@gmail.com',
@@ -9,6 +12,12 @@ function sendEmail() {
                 Phone: ${document.getElementById('phone').value}
                 Message: ${document.getElementById('message').value}`
     }).then(
-        message => message === 'OK' ? alert("Success") : alert(message)
-    );
+        message => message === 'OK' ? alert("Сообщение отравлено") : alert(message)
+    ).then(() => {
+        document.getElementById('name').value = ""
+        document.getElementById('email').value = ""
+        document.getElementById('phone').value = ""
+        document.getElementById('message').value = ""
+    }
+    )
 }

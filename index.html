@@ -660,13 +660,13 @@
 
 
 <div class="col-md-8 col-md-offset-2">
-<div class="contact-form">
-<input type="text" id="name" class="input" placeholder="Name">
-<input type="email" id="email" class="input" placeholder="Email">
-<input type="text" id="phone" class="input" placeholder="Phone">
-<textarea class="input" id="message" placeholder="Describe your projects"></textarea>
-<button class="main-btn" onclick="sendEmail()">Send message</button>
-</div>
+<form id="contact-form" class="contact-form" onsubmit="sendEmail(event)">
+<input type="text" id="name" class="input" placeholder="Name" required />
+<input type="email" id="email" class="input" placeholder="Email" required />
+<input type="text" id="phone" class="input" placeholder="Phone" required />
+<textarea class="input" id="message" placeholder="Describe your projects" required></textarea>
+<input type="submit" class="main-btn" value="Send Message">
+</form>
 </div>
 
 </div>
